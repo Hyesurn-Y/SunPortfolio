@@ -17,7 +17,7 @@
         const target = document.querySelector(selector);
         if (!target) return;
         try {
-          const response = await fetch(filePath);
+          const response = await fetch(filePath, { cache: 'no-store' });
           if (!response.ok) throw new Error(filePath);
           target.innerHTML = await response.text();
         } catch {
@@ -34,12 +34,75 @@
         });
       };
 
+      const activateSlideshows = () => {
+        const slideshows = document.querySelectorAll('gallery-slideshow');
+        slideshows.forEach((slideshow) => {
+          const items = Array.from(slideshow.querySelectorAll('media-item'));
+          if (items.length === 0) return;
+
+          let activeIndex = 0;
+          const delaySeconds = Number(slideshow.getAttribute('autoplay-delay') || '2');
+          const intervalMs = Number.isFinite(delaySeconds) && delaySeconds > 0 ? delaySeconds * 1000 : 2000;
+
+          const render = () => {
+            items.forEach((item, index) => {
+              item.style.display = index === activeIndex ? 'block' : 'none';
+            });
+          };
+
+          render();
+
+          if (items.length < 2) return;
+
+          setInterval(() => {
+            activeIndex = (activeIndex + 1) % items.length;
+            render();
+          }, intervalMs);
+        });
+      };
+
+      const activateDigitalClocks = () => {
+        const clocks = document.querySelectorAll('digital-clock');
+        if (clocks.length === 0) return;
+
+        const pad = (value) => String(value).padStart(2, '0');
+
+        const render = () => {
+          const now = new Date();
+          clocks.forEach((clock) => {
+            const use24 = clock.getAttribute('twentyfour-hour') !== 'false';
+            const padHour = clock.getAttribute('pad-hour') !== 'false';
+            let hour = now.getHours();
+
+            if (!use24) {
+              hour = hour % 12;
+              if (hour === 0) hour = 12;
+            }
+
+            const hourText = padHour ? pad(hour) : String(hour);
+            const minuteText = pad(now.getMinutes());
+            const secondText = pad(now.getSeconds());
+
+            const format = clock.getAttribute('value') || '{hour}:{minute}:{second}';
+            clock.textContent = format
+              .replace('{hour}', hourText)
+              .replace('{minute}', minuteText)
+              .replace('{second}', secondText);
+          });
+        };
+
+        render();
+        setInterval(render, 1000);
+      };
+
       await Promise.all([
         mount('#left-nav', './sections/left-nav.html'),
         mount('#home', './sections/home.html'),
       ]);
 
       enhanceMediaItems();
+      activateSlideshows();
+      activateDigitalClocks();
     </script>
   </body>
 </html>
