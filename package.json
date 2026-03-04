@@ -1,0 +1,26 @@
+{
+  "name": "sunportfolio",
+  "version": "1.0.0",
+  "description": "This is the web page for Sun's portfolio",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hyesurn-Y/SunPortfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Hyesurn-Y/SunPortfolio/issues"
+  },
+  "homepage": "https://github.com/Hyesurn-Y/SunPortfolio#readme",
+  "devDependencies": {
+    "vite": "^7.3.1"
+  }
+}

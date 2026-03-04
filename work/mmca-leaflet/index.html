@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MMCA Leaflet | Hyesurn Yang</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <div class="site-layout">
+      <aside class="sidebar">
+        <b><a href="../../index.html" rel="home-page">Hyesurn Yang</a></b><br><br>
+        Hi I’m Hyesurn (Sun). I’m a junior motion designer and graphic designer who enjoys turning ideas into clear, engaging design.<br><br>
+        <a href="mailto:sally815903@gmail.com">Email</a><br>
+        <a rel="history" href="../../cv/">CV</a><br>
+        <a target="_blank" href="https://www.linkedin.com/in/hyesurn-yang-1a6a96257">LinkedIn <span class="external-icon" aria-hidden="true">↗</span></a><br><br>
+        Work<br><span class="bodycopy-serif"><ol><li><a rel="history" href="../resonance/">Resonance</a><br></li><li><a rel="history" href="./">MMCA Leaflet</a></li><li><a rel="history" href="../jeonju-film-festival-26th/">26th Jeonju Film Festival</a><br></li><li><a rel="history" href="../link-project/">Link</a><br></li><li><a rel="history" href="../client-work-1/">Client Work</a><br></li><li><a rel="history" href="../client-work-2/">Client Work</a><br></li><li><a rel="history" href="../client-work-3/">Client Work</a><br></li><li><a rel="history" href="../test-project-eight/">Test Project Eight</a></li></ol></span>
+      </aside>
+      <main class="project-wrap">
+        <column-set gutter="1rem" mobile-hide-empty="false" mobile-stack="false"><column-unit slot="0" span="8"><b>MMCA LEAFLET</b></column-unit><column-unit slot="1" span="4"><div style="text-align: right"><a href="../../index.html" rel="home-page"><span data-live-clock>00:00:00</span></a></div></column-unit></column-set><br>
+        <media-item hash="MMCA-PLACEHOLDER"></media-item><br>
+        <column-set gutter="1rem"><column-unit slot="0"><span class="caption">MMCA Leaflet<br></span></column-unit><column-unit slot="1">Project detail will be updated soon.</column-unit></column-set>
+      </main>
+    </div>
+    <footer class="site-footer"><span style="color: rgba(0, 0, 0, 0.25);">©2026 Hyesurn Yang.</span></footer>
+    <script>
+      document.querySelectorAll('media-item').forEach((mediaItem) => {
+        if (mediaItem.querySelector('img')) return;
+        mediaItem.innerHTML = `<a href="./" rel="history"><img src="../../assets/project-placeholder.svg" alt="project image" /></a>`;
+      });
+    </script>
+    <script src="../../assets/live-clock.js"></script>
+  </body>
+</html>

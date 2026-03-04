@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resonance | Hyesurn Yang</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <div class="site-layout">
+      <aside class="sidebar">
+        <b><a href="../../index.html" rel="home-page">Hyesurn Yang</a></b><br>
+        <br>
+        Hi I’m Hyesurn (Sun). I’m a junior motion designer and graphic designer who enjoys turning ideas into clear, engaging design.<br><br>
+        <a href="mailto:sally815903@gmail.com">Email</a><br>
+        <a rel="history" href="../../cv/">CV</a><br>
+        <a target="_blank" href="https://www.linkedin.com/in/hyesurn-yang-1a6a96257">LinkedIn <span class="external-icon" aria-hidden="true">↗</span></a><br>
+        <br>
+        Work<br><span class="bodycopy-serif"><ol><li><a rel="history" href="./">Resonance</a><br></li><li><a rel="history" href="../mmca-leaflet/">MMCA Leaflet</a></li><li><a rel="history" href="../jeonju-film-festival-26th/">26th Jeonju Film Festival</a><br></li><li><a rel="history" href="../link-project/">Link</a><br></li><li><a rel="history" href="../client-work-1/">Client Work</a><br></li><li><a rel="history" href="../client-work-2/">Client Work</a><br></li><li><a rel="history" href="../client-work-3/">Client Work</a><br></li><li><a rel="history" href="../test-project-eight/">Test Project Eight</a></li></ol></span>
+      </aside>
+
+      <main class="project-wrap">
+        <column-set gutter="1rem" mobile-hide-empty="false" mobile-stack="false"><column-unit slot="0" span="8"><b>RESONANCE</b></column-unit><column-unit slot="1" span="4"><div style="text-align: right"><a href="../../index.html" rel="home-page"><span data-live-clock>00:00:00</span></a></div></column-unit></column-set><br>
+        <media-item class="" hash="C2820809971233390834850619188846" rotation="0"><figcaption class="caption" slot="caption"><div style="text-align: left;"></div></figcaption></media-item><br>
+        <column-set gutter="1rem" mobile-gutter="2rem"><column-unit slot="0"><span class="caption">Resonance<br>Project name: Thesis Project<br>Date: April 2024<br>Tools: Photoshop, Illustrator, After Effects, Premiere Pro<br></span><br></column-unit><column-unit slot="1">RESONANCE is an ambient music festival, and this motion video is an intro motion video for the festival. Rejecting the conventional artist-focused approach, the video is crafted to ignite the latent musical switches within the festival attendees, enabling them to focus on the music.<br>
+        <br><span class="bodycopy-serif">RESONANCE는 가상의 앰비언트 음악 페스티벌로, 이 프로젝트는 페스티벌의 정체성을 나타내고자 하는 모션영상입니다. 기존의 아티스트 중심 접근 방식을 벗어나, 앰비언트 음악이 주는 무형의 감정을 나타내고자 제작하였습니다. 영상은 삭막한 현대에 지친 3인의(관객)속 잠재된 음악적 감각을 깨워 그들의 마음을 따라 여정을 하여 앰비언트 뮤직페스티벌에 도착하는 것을 형상했습니다.<br></span></column-unit></column-set><br>
+        <column-set gutter="1" mobile-stack="false"><column-unit slot="0"><media-item hash="F2578349458193314375868086681895"><figcaption class="caption" slot="caption"></figcaption></media-item></column-unit><column-unit slot="1"><media-item hash="K2578352403935428762472674689319"><figcaption class="caption" slot="caption"><div style="text-align: left;">Dolor Nostrud<br>Consectetur dolor, Amat Ipsum<br>2037<br></div></figcaption></media-item></column-unit></column-set><br>
+
+        <br>
+        <br>
+      </main>
+    </div>
+
+    <footer class="site-footer"><span style="color: rgba(0, 0, 0, 0.25);">©2026 Hyesurn Yang.</span></footer>
+    <script>
+      const mediaItems = document.querySelectorAll('media-item');
+      mediaItems.forEach((mediaItem) => {
+        if (mediaItem.querySelector('img')) return;
+        const imageLink = document.createElement('a');
+        imageLink.href = './';
+        imageLink.rel = 'history';
+
+        const image = document.createElement('img');
+        image.src = '../../assets/project-placeholder.svg';
+        image.alt = `${mediaItem.getAttribute('hash') || 'project'} image`;
+
+        imageLink.appendChild(image);
+
+        const caption = mediaItem.querySelector('figcaption');
+        if (caption) {
+          mediaItem.insertBefore(imageLink, caption);
+        } else {
+          mediaItem.appendChild(imageLink);
+        }
+      });
+    </script>
+    <script src="../../assets/live-clock.js"></script>
+  </body>
+</html>
